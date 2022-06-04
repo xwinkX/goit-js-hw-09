@@ -1,5 +1,6 @@
 const startEl = document.querySelector('[data-start]');
 const stopEl = document.querySelector('[data-stop]');
+let switcherId = null;
 
 startEl.addEventListener('click', () => {
   startEl.disabled = true;
