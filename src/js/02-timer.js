@@ -20,7 +20,7 @@ const minutesEl = document.querySelector('[data-minutes]');
 const secondsEl = document.querySelector('[data-seconds]');
 
 const currentDate = new Date();
-let selectedDate = 0;
+// let selectedDates = 0;
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -40,10 +40,12 @@ const options = {
 flatpickr(input, options);
 
 const timer = targetDate => {
-  setInterval(() => {
-    const delta = new Date(targetDate) - new Date();
-    renderTimer(delta);
-  }, 1000);
+  return function () {
+    setInterval(() => {
+      const delta = new Date(targetDate) - new Date();
+      renderTimer(delta);
+    }, 1000);
+  };
 };
 
 function addLeadingZero(value) {
